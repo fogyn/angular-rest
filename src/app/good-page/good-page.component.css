@@ -1,0 +1,36 @@
+h1{
+  color: red;
+  text-align: center;
+}
+.good-buts{
+  margin-left: 100px;
+  float: left;
+  width: 240px;
+  height: 110px;
+  border: 3px solid blue;
+}
+button{
+  width: 200px;
+}
+.good-context{
+  float: left;
+  margin-left: 20px;
+  margin-right: 100px;
+  width: 70%;
+  min-height: 800px;
+  border: 3px solid blue;
+}
+nav{
+  margin:0 auto;
+}
+nav ul{
+  height:200px;
+  width:25%;
+  overflow:hidden;
+  overflow-y:scroll;
+}
+#titlegood{
+  color: blue;
+  text-align: center;
+}
+

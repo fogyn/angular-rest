@@ -1,0 +1,18 @@
+.nav-wrapper{
+  float: left;
+  margin-left: 100px;
+  margin-right: 100px;
+  width: 90%;
+  height: 350px;
+  background: beige;
+}
+.nav-wrapper li{
+  float: right;
+  width: 200px;
+  height: 100px;
+  background: #888888;
+  margin-right: 50px;
+  text-align: center;
+  font-size: 250%;
+
+}

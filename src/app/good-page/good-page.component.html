@@ -1,0 +1,82 @@
+<h1><p id="titlegood">Вы на станице управления Good</p></h1>
+
+ <div>
+   <ul class="nav nav-pills nav-fill">
+     <li class="nav-item">
+     <button class="nav-link active" (click)="getAllGoods()">all goods</button>
+   </li>
+     <li class="nav-item">
+       <button class="nav-link active" (click)="getGoodbyId()">good by id</button>
+     </li>
+     <li class="nav-item">
+       <button class="nav-link active" (click)="deleteGoodById()">delete good by id</button>
+     </li>
+     <li class="nav-item">
+       <button class="nav-link active" (click)="newGood()">new good</button>
+     </li>
+     <li class="nav-item">
+       <button class="nav-link active" (click)="updateGoodByID()">update good</button>
+     </li>
+   </ul>
+   <p>
+   <hr>
+
+
+   <div class="container-fluid">
+     <h1>{{testgood}}</h1>
+
+     <div *ngIf="test2">
+       <hr>
+       <h1> {{test2}}</h1>
+       <hr>
+     </div>
+
+     <div *ngIf="goods">
+       <h1>Rezult Goods from Basa:</h1>
+       <hr>
+       <nav>
+         <ul>
+           <li *ngFor="let good of goods">
+             {{good.goodid}} - {{good.name}} - {{good.price}}
+             <hr>
+           </li>
+         </ul>
+       </nav>
+     </div>
+
+     <div>
+       <div *ngIf="idbool">
+         <h1> Введите номер Good</h1>
+         <input type="text" [(ngModel)]="idtext" />
+         <button (click)="sendGetGoodById()">Показать good по номеру</button>
+       </div>
+       <div *ngIf="goodbyid">
+         <h1>Rezult Good by id ={{idtext}} from Basa:</h1>
+         <hr>
+         {{goodbyid.goodid}} - {{goodbyid.name}} - {{goodbyid.price}}
+       </div>
+     </div>
+
+     <div>
+       <div *ngIf="idnum==2">
+         <h1> Введите номер Good для удаления</h1>
+         <input type="text" [(ngModel)]="idtext" />
+         <button (click)="senddeleteGoodById()">Удалить good по номеру</button>
+       </div>
+       <div *ngIf="deleteText">
+         <h1>Rezult  delete Good by id ={{deleteText}} from Basa:</h1>
+         <hr>
+       </div>
+     </div>
+
+
+
+     <div *ngIf='newbool'>
+        <app-good-page-new></app-good-page-new>
+     </div>
+   </div>
+
+
+
+   </div>
+

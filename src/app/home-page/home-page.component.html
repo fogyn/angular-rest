@@ -1,0 +1,70 @@
+<p>home-page works!</p>
+<div class="buts">
+  <button (click)="funDemoRest()">demorest</button>
+  <button (click)="funBasa()">Basa</button>
+  <button (click)="funVar()">var</button>
+  <button (click)="funClear()">Clear</button>
+</div>
+<hr>
+<div class="vkladka">
+  <button (click)="funGoods()">Goods</button>
+  <button (click)="funOrders()">Order</button>
+</div>
+
+<div *ngIf="boolGoods">
+  <app-goods></app-goods>
+</div>
+<div *ngIf="boolOrders">
+  <app-orders></app-orders>
+</div>
+<div>
+  <h1>RezultVar:</h1>
+  <div *ngIf="varTemp"><h2>{{varTemp}}</h2>
+  </div>
+  <hr>
+  //
+  <h1>RezultDemorest:</h1>
+  <div *ngIf="ent">
+    <h2>{{ent.id}}</h2>
+    <br>
+    {{ent.text}}</div>
+  <hr>
+  //
+  <h1>RezultBasa:</h1>
+  <div *ngIf="orders">
+    <ul>
+      <li *ngFor="let order of orders">
+        {{order.orderid}} - {{order.client}} - {{order.date}} - {{order.address}}
+        <hr>
+      </li>
+    </ul>
+  </div>
+  <hr>
+  <div *ngIf="goods2">
+    <ul>
+      <li *ngFor="let good of goods2">
+        {{good.goodid}} - {{good.name}} - {{good.price}}
+        <hr>
+      </li>
+    </ul>
+  </div>
+</div>
+//
+<div>
+  <hr>
+  <h1>Rezult:</h1>
+  <div *ngIf="ent"><h2>{{ent.id}}</h2>
+    <hr>
+    {{ent.text}}</div>
+  <hr>
+  <h2>{{test}}</h2>
+</div>
+<hr>
+
+<div>
+  <ul>
+    <li *ngFor="let order of orders">{{order.orderid}} - {{order.client}} - {{order.date}} - {{order.address}}</li>
+  </ul>
+</div>
+
+
