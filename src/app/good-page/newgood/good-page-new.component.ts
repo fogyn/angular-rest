@@ -20,12 +20,8 @@ export class GoodPageNewComponent implements OnInit{
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Access-Control-Allow-Origin': 'http://localhost:8080/newgood',
-      'Access-Control-Allow-Method': 'POST, GET, OPTIONS, DELETE',
-      'Access-Control-Max-Age': '3600',
-      'Access-Control-Allow-Headers' : 'Content-Type',
-        'Content-Type':  'application/json',
-       },
+        'Content-Type': 'application/json',
+            },
       )
   };
   ngOnInit(): void {
@@ -37,8 +33,9 @@ export class GoodPageNewComponent implements OnInit{
     this.newbool = true;
     this.good.name = this.newname;
     this.good.price = this.newprice;
-    this.http.post<Good>('http://localhost:8080/newgood', this.good, this.httpOptions).subscribe(r => {
-      console.log(r.name + ' - ' + r.goodid + ' - ' + r.price);
+    this.http.post<string>('http://localhost:8080/newgood', this.good, this.httpOptions).subscribe(r => {
+      this.unswer = r;
+      console.log(r);
     });
 
   }
